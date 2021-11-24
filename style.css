@@ -11,3 +11,8 @@
     font-weight: 900;
     text-transform: uppercase;
 }
+
+.medium {
+    font-size: 20px;
+    padding: 8px;
+}
