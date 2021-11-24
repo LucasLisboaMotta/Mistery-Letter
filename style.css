@@ -37,3 +37,11 @@
 .rotateleft {
   transform: rotate(-5deg);
 }
+
+.rotateright {
+  transform: rotate(5deg);
+}
+
+.skewleft {
+  transform: skewX(10deg);
+}
