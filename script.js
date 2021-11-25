@@ -6,6 +6,7 @@ const gTamanho = ['medium', 'big', 'reallybig'];
 const gRotacao = ['rotateleft', 'rotateright'];
 const gInclinacao = ['skewleft', 'skewright'];
 const op = ['1100', '1010', '1001', '0101', '0110', '0011', '1110', '1101', '1011', '0111', '1111'];
+const contador = document.getElementById('carta-contador');
 
 function apagaSpan() {
   const numeroParagrafo = paragrafo.children.length;
@@ -39,6 +40,11 @@ function criarEvento() {
   }
 }
 
+function criarContador() {
+  const contagem = paragrafo.children.length;
+  contador.innerText = contagem;
+}
+
 function criarSpan() {
   const frase = input.value.split(' ');
   paragrafo.innerText = '';
@@ -53,6 +59,7 @@ function criarSpan() {
     span.className = criarClasse();
     paragrafo.appendChild(span);
   } criarEvento();
+  criarContador();
 }
 
 botaoCriar.addEventListener('click', criarSpan);
