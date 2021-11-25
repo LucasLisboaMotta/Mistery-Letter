@@ -13,7 +13,6 @@ function apagaSpan() {
     paragrafo.removeChild(paragrafo.children[0]);
   }
 }
-// de 2 a 4 classes, somente 1 elemento de cada classe.
 
 function criarClasse() {
   const opcao = op[Math.floor(Math.random() * 11)];
@@ -29,6 +28,17 @@ function criarClasse() {
   } return classe.join(' ');
 }
 
+function mudarClasse(alvo) {
+  const span = alvo.target;
+  span.className = criarClasse();
+}
+
+function criarEvento() {
+  for (let i = 0; i < paragrafo.children.length; i += 1) {
+    paragrafo.children[i].addEventListener('click', mudarClasse);
+  }
+}
+
 function criarSpan() {
   const frase = input.value.split(' ');
   paragrafo.innerText = '';
@@ -42,7 +52,7 @@ function criarSpan() {
     span.innerText = frase[i];
     span.className = criarClasse();
     paragrafo.appendChild(span);
-  }
+  } criarEvento();
 }
 
 botaoCriar.addEventListener('click', criarSpan);
