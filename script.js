@@ -5,7 +5,6 @@ const gEstilo = ['newspaper', 'magazine1', 'magazine2'];
 const gTamanho = ['medium', 'big', 'reallybig'];
 const gRotacao = ['rotateleft', 'rotateright'];
 const gInclinacao = ['skewleft', 'skewright'];
-const op = ['1100', '1010', '1001', '0101', '0110', '0011', '1110', '1101', '1011', '0111', '1111'];
 const contador = document.getElementById('carta-contador');
 
 function apagaSpan() {
@@ -16,17 +15,12 @@ function apagaSpan() {
 }
 
 function criarClasse() {
-  const opcao = op[Math.floor(Math.random() * 11)];
   const classe = [];
-  if (opcao[0] === '1') {
-    classe.push(gEstilo[Math.floor(Math.random() * 3)]);
-  } if (opcao[1] === '1') {
-    classe.push(gTamanho[Math.floor(Math.random() * 3)]);
-  } if (opcao[2] === '1') {
-    classe.push(gRotacao[Math.floor(Math.random() * 2)]);
-  } if (opcao[3] === '1') {
-    classe.push(gInclinacao[Math.floor(Math.random() * 2)]);
-  } return classe.join(' ');
+  classe.push(gEstilo[Math.floor(Math.random() * 3)]);
+  classe.push(gTamanho[Math.floor(Math.random() * 3)]);
+  classe.push(gRotacao[Math.floor(Math.random() * 2)]);
+  classe.push(gInclinacao[Math.floor(Math.random() * 2)]);
+  return classe.join(' ');
 }
 
 function mudarClasse(alvo) {
